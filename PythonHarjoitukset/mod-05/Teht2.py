@@ -4,10 +4,7 @@ luvut = []
 while luku!="":
     luvut.append(int(luku))
     luku = input("Anna luku: ")
-luvut.sort()
+luvut.sort(reverse=True)
 
-print(luvut[-1])
-print(luvut[-2])
-print(luvut[-3])
-print(luvut[-4])
-print(luvut[-5])
+for i in range(5):
+    print(luvut[i])
