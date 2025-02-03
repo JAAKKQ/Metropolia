@@ -1,6 +1,6 @@
 import random
 
-numero = random.randrange(1,10)
+numero = random.randint(1,10)
 
 while True:
     arvaus = int(input("Arvaa numero 1-10: "))
