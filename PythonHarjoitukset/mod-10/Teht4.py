@@ -19,50 +19,47 @@ class Auto:
     
     def kulje(self, tuntiMaara):
         self.kuljettu_matka += self.nopeus * tuntiMaara
+
 class Kilpailu:
-    def __init__(self, nimi, km_pituus, autot):
+    def __init__(self, nimi, pituus, autot):
         self.nimi = nimi
-        self.km_pituus = km_pituus
+        self.pituus = pituus
         self.autot = autot
-        self.voittaja_auto = None
-        while not self.voittaja_auto:
-            for auto in autot:
-                if auto.kuljettu_matka >= 10000:
-                    self.voittaja_auto = auto
-                    break
-        
+    
     def tunti_kuluu(self):
         for auto in self.autot:
-            auto.kiihdytä(random.randint(-10, 15))
+            muutos = random.randint(-10, 15)
+            auto.kiihdytä(muutos)
             auto.kulje(1)
-
+    
     def tulosta_tilanne(self):
         self.autot.sort(key=lambda x: x.kuljettu_matka, reverse=True)
-        print(f"{"Sijoitus":<15} {"Rekisteritunnus":<20} {"Huippunopeus":<20} {"Nopeus":<15} {"Kuljettumatka":<20}")
-        print("-"*75)
-        for i, auto in enumerate(self.autot):
-            print(f"{i+1:<15} {auto.rekisteritunnus:<20} {str(auto.huippunopeus) +" km/h":<20} {str(auto.nopeus) + " km/h":<15} {str(auto.kuljettu_matka) + " km":<20}")
-
+        print(f"{'Sijoitus':<10} {'Rekisteri':<15} {'Huippunopeus':<20} {'Nopeus':<15} {'Matka (km)':<15}")
+        print("-" * 75)
+        for i, auto in enumerate(self.autot, 1):
+            print(f"{i:<10} {auto.rekisteritunnus:<15} {auto.huippunopeus:<20} {auto.nopeus:<15} {auto.kuljettu_matka:<15}")
+        print()
+    
     def kilpailu_ohi(self):
-        if self.voittaja_auto:
-            return True
-        else:
-            return False
+        for auto in self.autot:
+            if auto.kuljettu_matka >= self.pituus:
+                return True
+        return False
 
-autot = []
-
-for i in range(10):
-    auto = Auto(f"ABC-{i+1}", random.randint(100,200))
-    autot.append(auto)
+autot = [Auto(f"ABC-{i+1}", random.randint(100, 200)) for i in range(10)]
 
 kilpailu = Kilpailu("Suuri romuralli", 8000, autot)
-
+    
+tunti = 0
 while True:
     kilpailu.tunti_kuluu()
-    if kilpailu.kilpailu_ohi():
+    tunti += 1
+    
+    if tunti % 10 == 0:
+        print(f"\nTilanne {tunti} tunnin jälkeen:")
         kilpailu.tulosta_tilanne()
-
-
-
-
-        
+    
+    if kilpailu.kilpailu_ohi():
+        print("Kilpailu on päättynyt! Lopputilanne:")
+        kilpailu.tulosta_tilanne()
+        break
