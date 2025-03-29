@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    background-color: antiquewhite;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: lightgrey;
+    z-index: 1000;
+}
+
+#home,
+#products,
+#contact {
+    scroll-margin-top: 80px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgrey;
+}
+
+.logo {
+    height: 70px;
+    background-color: darkgray;
+    color: #f8f9fa;
+    font-size: 1.5rem;
+}
+
+.logo img {
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+}
+
+.nav-links {
+    padding: 1rem 5%;
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+}
+
+.home {
+    height: 100vh;
+    background-color: white;
+    padding: 15% 5%;
+    text-align: center;
+}
+
+.home h1 {
+    font-size: 40px;
+}
+
+.home p {
+    margin: 0 10%;
+}
+
+.home-image {
+    background-color: gray;
+    height: 300px;
+    margin: 2rem 0;
+}
+
+.home-image img {
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.products {
+    min-height: 100vh;
+    padding: 2rem 5%;
+    background-color: white;
+    padding-bottom: 100px;
+}
+
+.products h1 {
+    font-size: 40px;
+}
+
+.products-image {
+    background-color: gray;
+    height: 300px;
+    margin: 2rem 0;
+}
+
+.products-image img {
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.products-hero p {
+    margin: 2% 0;
+    padding-bottom: 10%;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+}
+
+.product-item {
+    background-color: whitesmoke;
+    text-align: left;
+}
+
+.product-name {
+    margin: 8% 5%;
+}
+
+.product-img {
+    
+    margin: 0 5%;
+    height: 400px;
+    background-color: gray;
+}
+
+.product-img img {
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.product-alt {
+    color: darkgray;
+    margin: 1% 5%;
+    font-style: italic;
+}
+
+.product-desc {
+    margin: 5%;
+}
+
+.contact {
+    height: 100vh;
+    padding-top: 10%;
+    padding: 2rem 5%;
+    background-color: white;
+}
+
+.contact h1 {
+    font-size: 40px;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.address {
+    flex: 1;
+    line-height: 1.6;
+}
+
+.map {
+    flex: 1;
+    height: 300px;
+    background-color: gray;
+}
+
+.map img {
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
