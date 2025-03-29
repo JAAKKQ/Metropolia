@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Roboto Flex", sans-serif;
 }
 
 html {
@@ -114,10 +114,10 @@ nav {
 
 .products-hero p {
     margin: 2% 0;
-    padding-bottom: 10%;
 }
 
 .products-grid {
+    padding-top: 10%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
@@ -148,7 +148,6 @@ nav {
 }
 
 .product-alt {
-    color: darkgray;
     margin: 1% 5%;
     font-style: italic;
 }
