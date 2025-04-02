@@ -1,7 +1,19 @@
 'use strict';
-const int1 = parseInt(prompt('Give integer one'));
-const int2 = parseInt(prompt('Give integer two'));
-const int3 = parseInt(prompt('Give integer three'));
+const name = prompt('What is your name?');
+const number = Math.floor(Math.random()*4)
+console.log(number)
+switch (number) {
+    case 0:
+        document.querySelector('#target').innerHTML = `${name} you are Gryffindor`
+        break
+    case 1:
+        document.querySelector('#target').innerHTML = `${name} you are Slytherin`
+        break
+    case 2:
+        document.querySelector('#target').innerHTML = `${name} you are Hufflepuff`
+        break
+    case 3:
+        document.querySelector('#target').innerHTML = `${name} you are Ravenclaw`
+        break
 
-
-document.querySelector('#target').innerHTML = `Sum of integers: ${int1+int2+int3}\nAvarage: ${(int1+int2+int3)/3}`
+}
