@@ -1,17 +1,18 @@
 'use strict';
 
-function roll(max) {
-    return Math.floor(Math.random() * max + 1)
-}
+const array = [
+    "Johnny",
+    "DeeDee",
+    "Joey",
+    "Marky"
+]
 
-const max = parseInt(prompt("What is the maximum number on the dice?"))
-
-for (let i = 1; true; i++) {
-    const dice = roll(max)
-    if (dice === max) {
-        document.querySelector('#target').insertAdjacentHTML('beforeend', `<li>${dice}</li>`);
-        break
-    } else {
-        document.querySelector('#target').insertAdjacentHTML('beforeend', `<li>${dice}</li>`);
+function concat(array) {
+    let string = ""
+    for (let i = 0; i <= array.length-1; i++){
+        string += array[i]
     }
+    return string
 }
+
+document.querySelector('#target').innerHTML = concat(array);
